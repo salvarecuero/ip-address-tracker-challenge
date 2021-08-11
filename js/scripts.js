@@ -44,37 +44,34 @@ const onSubmit = () => {
 };
 
 const fetchData = async (value = "") => {
-  await fetch(`http://ip-api.com/json/${value}?fields=34140159`)
+  await fetch(`https://ipwhois.app/json/${value}`)
     .then((res) => {
       if (res.ok) return res.json();
       else throw Error(res.statusText);
     })
     .then((data) => {
-      if (data.status === "success") printFetchedData(data);
-      else
-        throw Error(
-          `${JSON.stringify(data.message)}: ${JSON.stringify(data.query)}`
-        );
+      if (data.success === true) printFetchedData(data);
+      else throw Error(`Reason: ${JSON.stringify(data.message)}`);
     })
     .catch((error) => console.log(error));
 };
 
 const printFetchedData = ({
-  query,
+  ip,
   city,
-  regionName,
-  offset,
+  region,
+  timezone_gmtOffset,
   isp,
-  lat,
-  lon,
+  latitude,
+  longitude,
 }) => {
-  ipAddressInfoElement.innerText = query;
-  locationInfoElement.innerText = `${city}, ${regionName}`;
-  timezoneInfoElement.innerText = getUTCFromOffset(offset);
+  ipAddressInfoElement.innerText = ip;
+  locationInfoElement.innerText = `${city}, ${region}`;
+  timezoneInfoElement.innerText = getUTCFromOffset(timezone_gmtOffset);
   ispInfoElement.innerText = isp;
-  document.title = `${query} - IP Address tracker`;
+  document.title = `${ip} - IP Address tracker`;
 
-  changeMapLocation(lat, lon);
+  changeMapLocation(latitude, longitude);
 };
 
 // Utils
