@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>IP Address tracker - Salvador Recuero</title>
+
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div id="header-content">
+        <h1 href="#" id="title">IP Address Tracker</h1>
+
+        <section id="input-button-wrapper">
+          <input
+            id="value-input"
+            type="text"
+            value=""
+            placeholder="Search for any IP adress or domain"
+          />
+          <button id="submit-button">
+            <img src="./images/icon-arrow.svg" alt="Submit arrow" />
+          </button>
+        </section>
+
+        <section id="info-container">
+          <div class="info-column">
+            <h3 class="info-title">IP Address</h3>
+            <span id="ip-address-info" class="info-content"></span>
+          </div>
+          <div class="info-column">
+            <h3 class="info-title">Location</h3>
+            <span id="location-info" class="info-content"></span>
+          </div>
+          <div class="info-column">
+            <h3 class="info-title">Timezone</h3>
+            <span id="timezone-info" class="info-content"></span>
+          </div>
+          <div class="info-column">
+            <h3 class="info-title">ISP</h3>
+            <span id="isp-info" class="info-content"></span>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <div id="leaflet-container"></div>
+
+    <div id="attribution-container">
+      <span id="attribution-content">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >.<br />
+        Coded by
+        <a href="https://github.com/salvarecuero" target="_blank"
+          >@salvarecuero</a
+        >.
+      </span>
+    </div>
+  </body>
+
+  <script src="js/scripts.js"></script>
+</html>
