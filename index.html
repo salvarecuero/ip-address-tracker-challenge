@@ -26,9 +26,9 @@
     ></script>
   </head>
   <body>
-    <header>
-      <div id="header-content">
-        <h1 href="#" id="title">IP Address Tracker</h1>
+    <main role="main">
+      <div id="main-content">
+        <h1 id="title">IP Address Tracker</h1>
 
         <section id="input-button-wrapper">
           <input
@@ -44,28 +44,28 @@
 
         <section id="info-container">
           <div class="info-column">
-            <h3 class="info-title">IP Address</h3>
+            <h2 class="info-title">IP Address</h2>
             <span id="ip-address-info" class="info-content"></span>
           </div>
           <div class="info-column">
-            <h3 class="info-title">Location</h3>
+            <h2 class="info-title">Location</h2>
             <span id="location-info" class="info-content"></span>
           </div>
           <div class="info-column">
-            <h3 class="info-title">Timezone</h3>
+            <h2 class="info-title">Timezone</h2>
             <span id="timezone-info" class="info-content"></span>
           </div>
           <div class="info-column">
-            <h3 class="info-title">ISP</h3>
+            <h2 class="info-title">ISP</h2>
             <span id="isp-info" class="info-content"></span>
           </div>
         </section>
       </div>
-    </header>
+    </main>
 
-    <div id="leaflet-container"></div>
+    <section id="leaflet-container" role="application"></section>
 
-    <div id="attribution-container">
+    <footer id="attribution-container" role="contentinfo">
       <span id="attribution-content">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
@@ -76,7 +76,7 @@
           >@salvarecuero</a
         >.
       </span>
-    </div>
+    </footer>
   </body>
 
   <script src="js/scripts.js"></script>
